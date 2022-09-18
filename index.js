@@ -1,11 +1,13 @@
 const express = require('express');
 const app = express();
 const fs = require('fs');
+const dotenv = require('dotenv');
 
 
+dotenv.config();
 
 
-app.get("/", (req, res) => res.json({message:"123123"}));
+app.get("/", (req, res) => res.json({ message: "123123" }));
 
 app.post("/create", (req, res) => {
     try {
@@ -44,4 +46,4 @@ app.get("/get", (req, res) => {
         res.status(500).json({ message: "error" })
     }
 })
-app.listen(8000, () => console.log("started"));
+app.listen(process.env.PORT, () => console.log("started"));
