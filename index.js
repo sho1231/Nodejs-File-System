@@ -5,7 +5,7 @@ const fs = require('fs');
 
 
 
-app.get("/", (req, res) => res.send("Hello123"));
+app.get("/", (req, res) => res.json({message:"123123"}));
 
 app.post("/create", (req, res) => {
     try {
